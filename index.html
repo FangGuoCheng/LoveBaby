@@ -9,7 +9,7 @@
         h1{
             position: absolute;
             text-align: center;
-            color: green;
+            color:black;
             width: 100%;
             font-family: 楷体;
             font-size: 40px;
@@ -27,7 +27,7 @@
 </body>
 <script src="插件/表白心插件.js"></script>
 <script>
-    
+
     // 计时器: 每隔一定时间重复执行一个函数
     // 括号中有两个参数: 分别是 函数名  和 重复的时间(单位时毫秒)
     setInterval(showTime, 1000);
@@ -44,13 +44,13 @@
         // 想一下你分手的时间点
         var overTime = new Date("2019-12-25");
         // document.write(overTime);
-        //Thu Jun 27 2019 15:03:51 GMT+0800 (中国标准时间) 
+        //Thu Jun 27 2019 15:03:51 GMT+0800 (中国标准时间)
         //Thu Mar 23 2017 08:00:00 GMT+0800 (中国标准时间)
         // 计算分手的时间 (要加上世界时间和北京时间相差的八个小时)
         var singleTime = date - overTime + 8 * 60 * 60 * 1000;
-        // document.write(singleTime);  // 时间  71392546812 ms 毫秒 
-        // 把这个时间转化成 年月日的格式 
-        // 转化成年 , 除以一年的毫秒数 就得到年数了 
+        // document.write(singleTime);  // 时间  71392546812 ms 毫秒
+        // 把这个时间转化成 年月日的格式
+        // 转化成年 , 除以一年的毫秒数 就得到年数了
         var year = singleTime / (365 * 24 * 60 * 60 * 1000);
         year = parseInt(year);  // 对小数取整
         // 转化天数
@@ -69,14 +69,14 @@
         // 转化秒数
         var seconds = singleTime / 1000;
         seconds = parseInt(seconds);
-        seconds = seconds % 60;  //分手时间2年96天16时15分27秒 
-        // document.write("分手时间" + year + "年" + days + "天" + hours + "时" 
+        seconds = seconds % 60;  //分手时间2年96天16时15分27秒
+        // document.write("分手时间" + year + "年" + days + "天" + hours + "时"
         //                 + minutes +"分" + seconds + "秒");
         // 获取H1标签
         var h1 = document.querySelector("h1");
         // 设置h1标签的内容
         h1.innerHTML = "亲爱的小猪宝宝<br> 我们已经认识了: <br>" + year + "年" + days + "天" + hours + "时" + minutes +"分" + seconds + "秒"+"<br>"
-		+"<br> 我已经爱你了: <br>" + year + "年" + (days-56) + "天" + hours + "时" + (minutes-23) +"分" + (seconds-20) + "秒";
+		+"我已经爱你了: <br>" + year + "年" + (days-56) + "天" + hours + "时" + (minutes-23) +"分" + (seconds-20) + "秒"+"<br>Love you forever!"
     }
 
 
@@ -92,11 +92,11 @@
     var weekday = date.getDay()   // 获取周几
     hours = date.getHours();    // 时
     minutes = date.getMinutes();  // 分
-    seconds = date.getSeconds();  //秒 
+    seconds = date.getSeconds();  //秒
     var Milliseconds = date.getMilliseconds();  //   毫秒数
-    tine = date.getTime();  // 从1970年1月1日0时,到显示的总毫秒数 
+    tine = date.getTime();  // 从1970年1月1日0时,到显示的总毫秒数
     console.log(date.getTime())  //1561624113148
 
-    
-</script> 
+
+</script>
 </html>
