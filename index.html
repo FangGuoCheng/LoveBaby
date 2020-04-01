@@ -4,99 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>永远爱你！</title>
+    <title>宝宝</title>
     <style>
-        h1{
-            position: absolute;
-            text-align: center;
-            color:black;
-            width: 100%;
-            font-family: 楷体;
-            font-size: 40px;
-            margin-top: 300px;
+        body{
+            height: 100vh;  
+            margin: 0;
+            perspective: 1600px;
+            perspective-origin: 50% 30%;     /*视野基点*/
+            background-color: rgb(161, 114, 61);
         }
+        a{
+            font-size: 25px;
+            position: relative;
+            left: 500px;right: 0; top: 50px; bottom: 0;
+
+        }
+        div{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+            width: 300px;  height: 300px;
+            margin: auto;
+            
+            transform-style: preserve-3d;
+            animation: 转圈 10s linear  infinite;
+        }
+       
+        img{
+            width: 300px ; height: 300px;
+            position: absolute;
+            top: 0;
+        }
+       
+        img:nth-child(1){
+            transform: rotateY(0deg) translateZ(650px);
+        }
+        img:nth-child(2){
+            transform: rotateY(60deg) translateZ(650px);
+        }
+        img:nth-child(3){
+            transform: rotateY(120deg) translateZ(650px);
+        }
+        img:nth-child(4){
+            transform: rotateY(180deg) translateZ(650px);
+        }
+        img:nth-child(5){
+            transform: rotateY(240deg) translateZ(650px);
+        }
+        img:nth-child(6){
+            transform: rotateY(300deg) translateZ(650px);
+        }
+        img:nth-child(7){
+            transform: rotateY(30deg) translateZ(650px);
+        }
+        img:nth-child(8){
+            transform: rotateY(90deg) translateZ(650px);
+        }
+        img:nth-child(9){
+            transform: rotateY(150deg) translateZ(650px);
+        }
+        img:nth-child(10){
+            transform: rotateY(210deg) translateZ(650px);
+        }
+        img:nth-child(11){
+            transform: rotateY(270deg) translateZ(650px);
+        }
+        img:nth-child(12){
+            transform: rotateY(330deg) translateZ(650px);
+        }
+        @keyframes 转圈{
+            from{
+                transform: rotateY(0deg);
+            }to{
+                transform: rotateY(-360deg);
+            }
+        }
+        
     </style>
 </head>
 <body>
-    <h1>
-        亲爱的<br>
-        我已经爱你了: <br>
-        3年256天14小时58分36秒
-    </h1>
-    <canvas></canvas>
+    <a href="date.html">这里是我们浪漫的交集</a>
+    <div>
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/5.jpg" alt="">
+        <img src="img/6.jpg" alt="">
+        <img src="img/7.jpg" alt="">
+        <img src="img/8.jpg" alt="">
+        <img src="img/9.jpg" alt="">
+        <img src="img/10.jpg" alt="">
+        <img src="img/11.jpg" alt="">
+        <img src="img/12.jpg" alt="">
+    </div>
 </body>
-<script src="插件/表白心插件.js"></script>
-<script>
-
-    // 计时器: 每隔一定时间重复执行一个函数
-    // 括号中有两个参数: 分别是 函数名  和 重复的时间(单位时毫秒)
-    setInterval(showTime, 1000);
-    // 计时器第一次调用时1秒之后, 所以应该提前调用一次
-    showTime();
-
-    // 定义一个函数, 在函数中计算时间
-    function showTime(){
-        // 获取当前时间
-        var date = new Date();
-        // 在页面上打印
-        // document.write(date);
-        // thursday星期四  june六月
-        // 想一下你分手的时间点
-        var overTime = new Date("2019-12-25");
-        // document.write(overTime);
-        //Thu Jun 27 2019 15:03:51 GMT+0800 (中国标准时间)
-        //Thu Mar 23 2017 08:00:00 GMT+0800 (中国标准时间)
-        // 计算分手的时间 (要加上世界时间和北京时间相差的八个小时)
-        var singleTime = date - overTime + 8 * 60 * 60 * 1000;
-        // document.write(singleTime);  // 时间  71392546812 ms 毫秒
-        // 把这个时间转化成 年月日的格式
-        // 转化成年 , 除以一年的毫秒数 就得到年数了
-        var year = singleTime / (365 * 24 * 60 * 60 * 1000);
-        year = parseInt(year);  // 对小数取整
-        // 转化天数
-        var days = singleTime / (24 * 60 * 60 * 1000)
-        days = parseInt(days);
-        // 对365取余得到不足一年的天数
-        days = days % 365;
-        // 转化小时
-        var hours = singleTime / (60 * 60 * 1000);
-        hours = parseInt(hours);
-        hours = hours % 24;
-        // 转化分钟
-        var minutes = singleTime / (60*1000);
-        minutes = parseInt(minutes);
-        minutes = minutes % 60;
-        // 转化秒数
-        var seconds = singleTime / 1000;
-        seconds = parseInt(seconds);
-        seconds = seconds % 60;  //分手时间2年96天16时15分27秒
-        // document.write("分手时间" + year + "年" + days + "天" + hours + "时"
-        //                 + minutes +"分" + seconds + "秒");
-        // 获取H1标签
-        var h1 = document.querySelector("h1");
-        // 设置h1标签的内容
-        h1.innerHTML = "亲爱的小猪宝宝<br> 我们已经认识了: <br>" + year + "年" + days + "天" + hours + "时" + minutes +"分" + seconds + "秒"+"<br>"
-		+"我已经爱你了: <br>" + year + "年" + (days-56) + "天" + hours + "时" + (minutes-23) +"分" + (seconds-20) + "秒" + "<br>Love you forever!";
-    }
-
-
-
-
-
-
-
-    // 获取时间的年月日时分秒
-    year = date.getFullYear();  // 获取当前年份
-    var month = date.getMonth()+1; // 获取月份 [0,11] 表示[1,12]月
-    days = date.getDate();  //获取日期
-    var weekday = date.getDay()   // 获取周几
-    hours = date.getHours();    // 时
-    minutes = date.getMinutes();  // 分
-    seconds = date.getSeconds();  //秒
-    var Milliseconds = date.getMilliseconds();  //   毫秒数
-    tine = date.getTime();  // 从1970年1月1日0时,到显示的总毫秒数
-    console.log(date.getTime())  //1561624113148
-
-
-</script>
 </html>
